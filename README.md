@@ -2,9 +2,6 @@
 
 La libreria serve per interrogare il sensore e recuperare il valore di temperatura e pressione atmosferica
 
-### Utilizzo della libreria
-
-
 Salvare i due file:
 
 - **bmp180.h**
