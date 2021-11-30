@@ -67,4 +67,36 @@ In modo analogo possiamo rilevare la pressione atmosferica:
 Attendiamo prima di interrogare di nuovo il sensore.
 
         delay(200);
+        
+###Pressione relativa        
+
+Il sensore di pressione restituisce la pressione assoluta, che varia con l'altitudine. Per rimuovere gli effetti dell'altitudine, 
+si può utilizzare la funzione Questo numero è comunemente usato nei bollettini meteorologici.
+    
+
+          p0 = bmp180.seaLevel(P,ALTITUDINE); // siamo a 400 metri 
+          
+ - P = pressione assoluta in mb 
+ - ALTITUDINE = altitudine attuale in metri
+ - Risultato: p0 = pressione compensata a livello del mare in mb
+          
+          Serial.print("pressione relativa (a livello del mare): ");
+          Serial.print(p0,2);
+          Serial.println("mb");
+  
+##Altitudine          
+
+Se vuoi determinare l'altitudine dalla lettura della pressione, si può utilizzre la funzione altitudine insieme a una pressione di base (livello del mare o altro).
+Parametri: 
+
+          a = bmp180.altitudine(P, p0);
+
+- P = pressione assoluta in mb 
+- p0 = pressione di base in mb.
+- a = altitudine in m
+
+          
+          Serial.print("Altitudine calcolata: ");
+          Serial.print(a,0);
+          Serial.println("metri");
   
