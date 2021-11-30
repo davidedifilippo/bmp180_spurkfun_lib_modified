@@ -68,35 +68,39 @@ Attendiamo prima di interrogare di nuovo il sensore.
 
         delay(200);
         
-###Pressione relativa        
+##Altitudine rispetto ad un riferimento fisso        
 
-Il sensore di pressione restituisce la pressione assoluta, che varia con l'altitudine. Per rimuovere gli effetti dell'altitudine, 
-si può utilizzare la funzione Questo numero è comunemente usato nei bollettini meteorologici.
+Se si vuole determinare l'**altitudine rispetto ad un riferimento fisso dalla lettura della pressione**, si può utilizzre la funzione: 
+ 
+
+          a = bmp180.altitude(P, p0);
+
+- P = pressione assoluta in mb (nella posizione di interesse sopra o sotto il riferimento fisso)
+- p0 = pressione di base in mb (livello del mare o all'altezza di riferimento).
+- a = altitudine in m
+
+          Serial.print("Altitudine calcolata: ");
+          Serial.print(a,0);
+          Serial.println("metri");
+          
+ Se si pone p0 = 1013.25 mb, ossia la pressione al livello del mare, la chiamata resituisce l'altezza in cui è stata effettuata la misura di pressione P
+ 
+          a = bmp180.altitude(P,1013.25);
+ 
+ ###Pressione relativa        
+
+Il sensore di pressione restituisce la pressione assoluta, che varia con l'altitudine. Per poter paragonare la pressione nei vari punti della terra bisogna eliminare la dipendenza dall'altitudine ossia riportare la pressione al livello del mare. Per rimuovere gli effetti dell'altitudine, si può utilizzare la funzione
     
 
-          p0 = bmp180.seaLevel(P,ALTITUDINE); // siamo a 400 metri 
+          p0 = bmp180.seaLevel(P,A); // siamo a 741 metri 
           
  - P = pressione assoluta in mb 
- - ALTITUDINE = altitudine attuale in metri
- - Risultato: p0 = pressione compensata a livello del mare in mb
+ - A = altitudine attuale in metri
+ - p0 = pressione compensata a livello del mare in mb
           
           Serial.print("pressione relativa (a livello del mare): ");
           Serial.print(p0,2);
           Serial.println("mb");
-  
-##Altitudine          
-
-Se vuoi determinare l'altitudine dalla lettura della pressione, si può utilizzre la funzione altitudine insieme a una pressione di base (livello del mare o altro).
-Parametri: 
-
-          a = bmp180.altitudine(P, p0);
-
-- P = pressione assoluta in mb 
-- p0 = pressione di base in mb.
-- a = altitudine in m
-
           
-          Serial.print("Altitudine calcolata: ");
-          Serial.print(a,0);
-          Serial.println("metri");
+Questo numero è comunemente usato nei bollettini meteorologici.
   
