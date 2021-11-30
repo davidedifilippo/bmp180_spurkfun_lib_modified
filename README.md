@@ -41,9 +41,9 @@ Il dato a 16 bit è ora presente all’indirizzo 0xF6 nella memoria interna del 
     
     bool ok = bmp180.getTemperature(T);
   
-Se la lettura va a buon fine 
+Se la lettura va a buon fine, stampiamo T:
 
-    if (ok != false)
+    if (ok)
     {
       Serial.print("temperatura: ");
       Serial.print(T,2);             //Stampa del dato con due cifre significative
@@ -58,11 +58,13 @@ In modo analogo possiamo rilevare la pressione atmosferica:
       double P;  //sarebbe meglio globale
       bool ok = bmp180.getPressure(P,T);
 
-      if (ok != 0){
+      if (ok){
       Serial.print("Pressione assoluta: ");
       Serial.print(P,2);
       Serial.println(" millibar");
       }
 
+Attendiamo prima di interrogare di nuovo il sensore.
 
+        delay(200);
   
