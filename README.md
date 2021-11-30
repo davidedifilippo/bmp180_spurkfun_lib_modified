@@ -2,7 +2,7 @@
 
 La libreria serve per interrogare il sensore e recuperare il valore di temperatura e pressione atmosferica
 
-## Utilizzo della libreria
+### Utilizzo della libreria
 
 
 Salvare i due file:
@@ -18,7 +18,7 @@ Da questo momento è disponibile la classe di dispositivi bmp180. Si crea quindi
 
     BMP180 bmp180;
     
-## Setup
+### Setup
     
 Prima di poter utilizzare il sensore è necessario prelevare dalla memoria **EEPROM** a sola lettura del sensore i parametri di calibrazione. Serviranno **alla libreria** per il calcolo di precisione della temperatura e della pressione:
 
@@ -28,7 +28,7 @@ Questa chiamata restituisce "true" se il sensore risponde all'interrogazione. In
 
     if(bmp180.begin()) Serial.println("ok"); else Serial.println("Inizializzazione fallita);
     
-## Loop - fase di monitoraggio ciclico 
+### Loop - fase di monitoraggio ciclico 
     
 Per poter acquisire la pressione atmosferica in modo corretto bisogna conoscere la temperatura dell’ambiente in cui si effettua la misura. 
 
