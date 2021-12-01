@@ -19,7 +19,7 @@ Da questo momento è disponibile la classe di dispositivi bmp180. Si crea quindi
     
 Prima di poter utilizzare il sensore è necessario prelevare dalla memoria **EEPROM** a sola lettura del sensore i parametri di calibrazione. Serviranno **alla libreria** per il calcolo di precisione della temperatura e della pressione:
 
-    bmp180.begin() //da inserire nella fase di setup 
+    bmp180.begin(); //da inserire nella fase di setup 
 
 Questa chiamata restituisce "true" se il sensore risponde all'interrogazione. In caso contrario ci potrebbe essere un problema nel collegamento del sensore. Sarebbe buona norma controllare:
 
@@ -56,7 +56,7 @@ In modo analogo possiamo rilevare la pressione atmosferica:
       if (status != 0) delay(status);
       
       double P;  //sarebbe meglio globale
-      bool ok = bmp180.getPressure(P,T);
+      ok = bmp180.getPressure(P,T);
 
       if (ok){
       Serial.print("Pressione assoluta: ");
