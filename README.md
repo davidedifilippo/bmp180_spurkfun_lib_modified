@@ -31,7 +31,7 @@ Per poter acquisire la pressione atmosferica in modo corretto bisogna conoscere 
 
     int attesa = bmp180.startTemperature();
 
-La chiamata precedente attiva il sensore e comanda l'aquisizione della temperatura. Il valore resituito è il **tempo da attendere in millisecondi necessario al sensore per la conversione numerica della temperatura tramite ADC interno** 
+La chiamata precedente attiva il sensore e comanda l'acquisizione della temperatura. Il valore resituito è il **tempo da attendere in millisecondi necessario al sensore per la conversione numerica della temperatura tramite ADC interno** 
 
     if (attesa != 0) delay(attesa);
 
