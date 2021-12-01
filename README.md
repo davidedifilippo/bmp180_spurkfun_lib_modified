@@ -52,7 +52,7 @@ Se la lettura va a buon fine, stampiamo T:
 
 In modo analogo possiamo rilevare la pressione atmosferica:
       
-      status = pressure.startPressure(3); // 3 è il livello di precisione massimo della misura
+      status = bmp180.startPressure(3); // 3 è il livello di precisione massimo della misura
       if (status != 0) delay(status);
       
       double P;  //sarebbe meglio globale
