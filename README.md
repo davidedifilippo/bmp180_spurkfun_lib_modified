@@ -11,7 +11,7 @@ nella cartella del programma di gestione.  Includere il file **bmp180.h** nel pr
 
     #include “bmp180.h”   
     
-Da questo momento è disponibile la classe di dispositivi bmp180. Si crea quindi un oggetto del tipo MPU6050.
+Da questo momento è disponibile la classe di dispositivi bmp180. Si crea quindi un oggetto del tipo bmp180.
 
     BMP180 bmp180;
     
