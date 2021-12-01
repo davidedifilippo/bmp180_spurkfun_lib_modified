@@ -68,7 +68,7 @@ Attendiamo prima di interrogare di nuovo il sensore.
 
         delay(200);
         
-##Altitudine rispetto ad un riferimento fisso        
+## Altitudine rispetto ad un riferimento fisso        
 
 Se si vuole determinare l'**altitudine rispetto ad un riferimento fisso dalla lettura della pressione**, si può utilizzre la funzione: 
  
@@ -87,7 +87,7 @@ Se si vuole determinare l'**altitudine rispetto ad un riferimento fisso dalla le
  
           a = bmp180.altitude(P,1013.25);
  
- ###Pressione relativa        
+ ### Pressione relativa        
 
 Il sensore di pressione restituisce la pressione assoluta, che varia con l'altitudine. Per poter paragonare la pressione nei vari punti della terra bisogna eliminare la dipendenza dall'altitudine ossia riportare la pressione al livello del mare. Per rimuovere gli effetti dell'altitudine, si può utilizzare la funzione
     
